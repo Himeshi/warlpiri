@@ -1,9 +1,9 @@
 ﻿  main.c
-e:\academic\grad\research\unum\warlpiri\warlpiri\main.c(16): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+e:\academic\grad\research\unum\warlpiri\warlpiri\main.c(17): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
           c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(290) : see declaration of 'scanf'
-e:\academic\grad\research\unum\warlpiri\warlpiri\main.c(20): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+e:\academic\grad\research\unum\warlpiri\warlpiri\main.c(21): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
           c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(290) : see declaration of 'scanf'
-e:\academic\grad\research\unum\warlpiri\warlpiri\main.c(24): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+e:\academic\grad\research\unum\warlpiri\warlpiri\main.c(25): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
           c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(290) : see declaration of 'scanf'
-e:\academic\grad\research\unum\warlpiri\warlpiri\warlpiri.h(13): warning C4716: 'warlpiri_add' : must return a value
+e:\academic\grad\research\unum\warlpiri\warlpiri\warlpiri.h(16): warning C4716: 'warlpiri_add' : must return a value
   warlpiri.vcxproj -> E:\Academic\Grad\Research\unum\warlpiri\warlpiri\Debug\warlpiri.exe

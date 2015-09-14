@@ -1,7 +1,11 @@
 /*Header file to perform Warlpiri arithmetic*/
 #include <stdio.h>
 
-int warlpiri_add()
+/*prototypes*/
+char* warlpiri_add(char* inputNumber1, char* inputNumber2);
+
+/*functions*/
+char* warlpiri_add(char* inputNumber1, char* inputNumber2)
 {
 	//check if numbers are valid
 

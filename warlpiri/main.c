@@ -5,8 +5,9 @@
 int main()
 {
 	char oper;
-	char warlpiriNum1[8];
-	char warlpiriNum2[8];
+	char* ans;
+	char warlpiriNum1[11];
+	char warlpiriNum2[11];
 	int x=1;
 
 	while(x)
@@ -26,7 +27,7 @@ int main()
 
 		switch(oper) {
 		case '+':
-			warlpiri_add();
+			ans = warlpiri_add(warlpiriNum1, warlpiriNum2);
 			break;
 		case '-':
 			printf("Sorry, operator not supported yet!\n\n");
