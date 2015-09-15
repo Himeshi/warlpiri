@@ -23,7 +23,6 @@ int main()
 		//get the operation
 		printf("Enter the operation you wish to perform from {+,-,*,/,^} (^ for power): ");
 		scanf(" %c", &oper);
-		printf("\n");
 
 		switch(oper) {
 		case '+':
