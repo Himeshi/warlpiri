@@ -7,6 +7,7 @@ int main()
 	initialize_warlpiri();
     
     printf("%U\n",5);
+    warlpiri_scan("%U");
 
 	return 0;
 }
