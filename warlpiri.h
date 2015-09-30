@@ -2,71 +2,33 @@
 #include <stdio.h>
 #include <printf.h>
 
+typedef short warlpiri_u;
+
 /*prototypes*/
-void initialize_warlpiri();
-static int printf_arginfo_U(const struct printf_info* info, size_t n, int* argtypes);
-static int printf_output_U(FILE* stream, const struct printf_info* info, const void* const* args);
-int warlpiri_scan(const char* fmt, ...);
+int initialize_warlpiri();
+void warlpiri_printf_handler(FILE* stream, const struct printf_info* info, const void* const* args);
+static int warlpiri_printf_arginfo(const struct printf_info* info, size_t n, int* argtypes, int* size);
 
 /*constants*/
 
 /*functions*/
-void initialize_warlpiri()
+int initialize_warlpiri()
 {
-    register_printf_function('U', printf_output_U, printf_arginfo_U);
+    register_printf_specifier('U', warlpiri_printf_handler, warlpiri_printf_arginfo);
 }
 
-static int printf_arginfo_U(const struct printf_info* info, size_t n, int* argtypes)
+void warlpiri_printf_handler(FILE* stream, const struct printf_info* info, const void* const* args)
+{
+    warlpiri_u warlpiri_arg;
+
+    warlpiri_arg = ((warlpiri_u)(args[0]));
+    return fprintf(stream, "Unum"); // replace with Ela's u2x function
+}
+
+static int warlpiri_printf_arginfo(const struct printf_info* info, size_t n, int* argtypes, int* size)
 {
     if (n > 0)
         argtypes[0] = PA_POINTER;
 
     return 1;
-}
-
-static int printf_output_U(FILE* stream, const struct printf_info* info, const void* const* args)
-{
-    printf("UNUM");
-    return 1;
-}
-
-int warlpiri_scan(const char* fmt, ...)
-{
-    int i;
-    int *j = NULL;
-    char *c = NULL;
-    char* s;
-
-    va_list argp;
-    va_start(argp, fmt);
-
-    for (i = 0; fmt[i] != '\0'; i++) {
-        if (fmt[i] != '%') {
-            fgetc(stdin);
-            continue;
-        }
-
-        switch (fmt[++i]) {
-        case 'c':
-            c = va_arg(argp, char *);
-            *c = fgetc(stdin);
-            break;
-
-        case 's':
-            j = va_arg(argp, int *);
-            // TODO
-            break;
-
-        case 'U':
-            printf("UNUM");
-            break;
-
-        case '%':
-            putchar('%');
-            break;
-        }
-    }
-
-    va_end(argp);
-    return 0;
 }

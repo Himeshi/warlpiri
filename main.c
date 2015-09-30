@@ -4,10 +4,11 @@
 
 int main()
 {
-	initialize_warlpiri();
-    
-    printf("%U\n",5);
-    warlpiri_scan("%U");
+    warlpiri_u i = 10;
 
-	return 0;
+    initialize_warlpiri();
+
+    printf("tes %U\n", i);
+
+    return 0;
 }
