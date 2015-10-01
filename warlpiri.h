@@ -2,13 +2,15 @@
 #include <stdio.h>
 #include <printf.h>
 
+#define WARLPIRI_X_LENGTH 11
+
 typedef short warlpiri_u;
 
 /*prototypes*/
 int initialize_warlpiri();
 static int warlpiri_printf_handler(FILE* stream, const struct printf_info* info, const void* const* args);
 static int warlpiri_printf_arginfo(const struct printf_info* info, size_t n, int* argtypes, int* size);
-char* u2x(warlpiri_u u);
+char* u2x(warlpiri_u u, char *x);
 
 /*constants*/
 
@@ -21,11 +23,11 @@ int initialize_warlpiri()
 static int warlpiri_printf_handler(FILE* stream, const struct printf_info* info, const void* const* args)
 {
     warlpiri_u *warlpiri_arg;
-    char *x;
+    char x[WARLPIRI_X_LENGTH];
 
     warlpiri_arg = *((warlpiri_u**)(args[0]));
 
-    x = u2x(warlpiri_arg); // replace with Ela's u2x function
+    u2x(warlpiri_arg, x); // replace with Ela's u2x function
 
     return fprintf(stream, "%s", x);
 }
@@ -38,11 +40,9 @@ static int warlpiri_printf_arginfo(const struct printf_info* info, size_t n, int
     return 1;
 }
 
-char *u2x(warlpiri_u u)
+char *u2x(warlpiri_u u, char *x)
 {
-    static char str[11];
+    sprintf(x, "%d", u);
 
-    sprintf(str, "%d", u);
-
-    return str;
+    return x;
 }
