@@ -11,6 +11,7 @@ int initialize_warlpiri();
 static int warlpiri_printf_handler(FILE* stream, const struct printf_info* info, const void* const* args);
 static int warlpiri_printf_arginfo(const struct printf_info* info, size_t n, int* argtypes, int* size);
 char* u2x(warlpiri_u u, char *x);
+warlpiri_u x2u(char *x);
 
 /*constants*/
 
@@ -45,4 +46,9 @@ char *u2x(warlpiri_u u, char *x)
     sprintf(x, "%d", u);
 
     return x;
+}
+
+warlpiri_u x2u(char *x)
+{
+    return 10;
 }
