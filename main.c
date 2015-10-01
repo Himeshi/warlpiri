@@ -4,7 +4,7 @@
 
 int main()
 {
-    warlpiri_u i = 10;
+    warlpiri_u i = 8;
 
     initialize_warlpiri();
 
